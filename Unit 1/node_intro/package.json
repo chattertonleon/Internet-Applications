@@ -1,0 +1,22 @@
+{
+  "name": "node_intro",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chattertonleon/Internet-Applications.git"
+  },
+  "author": "Leon Chatterton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chattertonleon/Internet-Applications/issues"
+  },
+  "homepage": "https://github.com/chattertonleon/Internet-Applications#readme",
+  "dependencies": {
+    "mocha": "^7.0.1"
+  }
+}
