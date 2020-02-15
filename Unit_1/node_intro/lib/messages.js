@@ -14,14 +14,11 @@ module.exports = function(url,callback){
 
   return {
     create:function(newMessage,callback){
-      const message = new Message(
-        {username: newMessage.username, text: newMessage.text});
-      var res = message;
-      var err = null;
-      callback(err,res);
+      const message = new Message(newMessage);
+      message.save(callback);
     },
     read:function(id,callback){
-      callback();
+      Message.findById(id).exec(callback);
     },
     readUsername:function(username,callback){
       callback();
