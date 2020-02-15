@@ -1,1 +1,4 @@
-console.log('index.js is executing');
+var express = require('express');
+var app = express();
+
+var serverCode = require('./routes/hello.js');
