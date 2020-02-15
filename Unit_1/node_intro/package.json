@@ -1,0 +1,14 @@
+{
+  "name": "first_node_program",
+  "version": "0.1.0",
+  "description": "lmao",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Leon Chatterton",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^7.0.1"
+  }
+}
