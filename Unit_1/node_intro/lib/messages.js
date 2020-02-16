@@ -1,6 +1,5 @@
-const sanitizeHTML = require('sanitize-html');
-
 module.exports = function(url,callback){
+  const sanitizeHTML = require('sanitize-html');
   const mongoose = require('mongoose');
   mongoose.connect(url,callback);
 
@@ -14,7 +13,8 @@ module.exports = function(url,callback){
         type:String,
         required:true
       }
-    }
+    },
+    {strict:'throw'}
   );
 
   const Message = mongoose.model(
@@ -24,13 +24,22 @@ module.exports = function(url,callback){
 
   return {
     create:function(newMessage,callback){
-      const message = new Message(newMessage);
+      try{
+        var message = new Message(newMessage);
+      } catch(exception){
+        return callback('Unable to create entry: invalid number of entries in input');
+      }
+      if (message.username) message.username = sanitizeHTML(message.username);
+      if (message.text) message.text = sanitizeHTML(message.text);
       message.save(callback);
     },
     read:function(id,callback){
       Message.findById(id).exec(callback);
     },
     readUsername:function(username,callback){
+      if (typeof(username) !== 'string'){
+        return callback('Username not convertible to string');
+      }
       Message.find({username:username}).exec(callback);
     },
     readAll:function(callback){
