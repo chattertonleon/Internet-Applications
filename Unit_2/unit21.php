@@ -9,33 +9,44 @@
 
 	<!-- Task 1: String-->
 	<!-- write your solution to Task 1 here -->
-  <?php
-    $programming = "I love programming";
-    print $programming[0];
-  ?>
 	<div class="section">
 		<h2>Task 1 : String</h2>
-
-
-
+    <?php
+      $text = 'I love programming';
+      echo '<p>'.$text.'</p>';
+      echo '<p>'.$text[0].'</p>';
+      echo '<p>'.strlen($text).'</p>';
+      echo '<p>'.$text[strlen($text)-1].'</p>';
+      echo '<p>'.substr($text, 0, 6).'</p>';
+      echo '<p>'.ucwords($text).'</p>';
+    ?>
 	</div>
 
 	<!-- Task 2: Array and image-->
 	<!-- write your solution to Task 2 here -->
 	<div class="section">
 		<h2>Task 2 : Array and image</h2>
-
-
-
-	</div>
+    <?php
+      define('IMAGES','images/');
+      $imgArray = array("earth.jpg", "flower.jpg", "plane.jpg", "tiger.jpg");
+      echo '<img src="'.IMAGES.$imgArray[rand(0,3)].'">';
+      echo '<img src="'.IMAGES.$imgArray[rand(0,3)].'">';
+      echo '<img src="'.IMAGES.$imgArray[rand(0,3)].'">';
+      echo '<img src="'.IMAGES.$imgArray[rand(0,3)].'">';
+    ?>
+  </div>
 
 	<!-- Task 3: Function definition dayinmonth  -->
 	<!-- write your solution to Task 3 here -->
 	<div class="section">
 		<h2>Task 3 : Function definition</h2>
-
-
-
+    <?php
+      function dayinmonth($monthNum){
+        $yearArray = array(31,28,31,30,31,30,31,31,30,31,30,31);
+        return $yearArray[$monthNum-1];
+      }
+      echo '<p>'.dayinMonth(6).'</p>';
+    ?>
 	</div>
 
 
@@ -44,9 +55,12 @@
 	<!-- write your solution to Task 4 here -->
 	<div class="section">
 		<h2>Task 4: My Favorite Artists from a file</h2>
-
-
-
+    <?php
+      $read_file = file('favorite.txt');
+      foreach ($read_file as $celebName){
+        echo '<p><a href="https://www.mtv.com/artists/'.$celebName.'/">'.$celebName.'</a></p>';
+      }
+    ?>
 	</div>
 
 	<!-- Task 6: Directory operations -->
