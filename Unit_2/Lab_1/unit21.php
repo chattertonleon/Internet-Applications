@@ -67,9 +67,12 @@
 	<!-- write your solution to Task 6 here -->
 	<div class="section">
 		<h2>Task 6 : Directory operations</h2>
-
-
-
+    <?php
+      $dirArray = scandir('/home/leonch30/Documents/Computer-Science-Degree/Year-2/Internet-Applications/Unit_2/',SCANDIR_SORT_DESCENDING);
+      for ($i = 0; $i<count($dirArray)-2; $i++){
+        echo '<p>'.$dirArray[$i].'</p>';
+      }
+    ?>
 	</div>
 
 	<!-- Task 6 optional: Directory operations -->
@@ -88,7 +91,9 @@
 	<!-- write your solution to Task 5 here -->
 	<div class="section">
 		<h2>Task 5: including external files</h2>
-
+    <?php
+      require("footer.php");
+    ?>
 
 	</div>
 
