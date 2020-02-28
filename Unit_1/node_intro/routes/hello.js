@@ -2,21 +2,15 @@ console.log('index.js is executing');
 var express = require('express');
 var app = express();
 var router = express.Router();
+var dataLayer = require('../lib/messages.js')
 
 const request = require('superagent');
 const status = require('http-status');
 
 router.get(
-  '/',
+  '/api/v1/messages/:id',
   function(req,res){
-    res.send('Hello, World!');
-  }
-);
-
-router.post(
-  '/',
-  function(req,res){
-    res.sendStatus(status.METHOD_NOT_ALLOWED);
+    
   }
 );
 
