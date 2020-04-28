@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
           $table->timestamps();
           $table->enum('category',['pet','phone','jewellery']);
           $table->string('color');
-          $table->date('date_lost');
+          $table->date('date_found');
           $table->string('details')->nullable();
           $table->string('place')->nullable();
           $table->bigInteger('claimed_user_id')->nullable()->unsigned();

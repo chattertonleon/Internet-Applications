@@ -28,7 +28,7 @@
               <tr>
                 <th>Category</th>
                 <th>Color</th>
-                <th>Date Lost</th>
+                <th>Date Found</th>
               </tr>
             </thead>
             <tbody>
@@ -38,13 +38,13 @@
               <tr>
                 <td>{{$item['category']}}</td>
                 <td>{{$item['color']}}</td>
-                <td>{{$item['date_lost']}}</td>
+                <td>{{$item['date_found']}}</td>
               </tr>
               @else
               <tr>
                 <td>{{$item['category']}}</td>
                 <td>{{$item['color']}}</td>
-                <td>{{$item['date_lost']}}</td>
+                <td>{{$item['date_found']}}</td>
                 <td>
                   <form action="{{action('ItemsController@show',$item['id'])}}"method="post">
                     @csrf

@@ -46,9 +46,9 @@
                 <td><input type="text" name="color" placeholder="Color of item" value="{{$item->color}}"/></td>
               </tr>
               <tr>
-                <td>Date lost</td>
-                <td>{{$item['date_lost']}}</td>
-                <td><input type="date" name="date_lost" placeholder="Date item lost" value="{{$item->date_lost}}"></td>
+                <td>Date found</td>
+                <td>{{$item['date_found']}}</td>
+                <td><input type="date" name="date_found" placeholder="Date item lost" value="{{$item->date_found}}"></td>
               </tr>
               <tr>
                 <td>Description</td>

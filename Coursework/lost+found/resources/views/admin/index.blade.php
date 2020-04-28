@@ -29,7 +29,7 @@
               <tr>
                 <th>Category</th>
                 <th>Color</th>
-                <th>Date Lost</th>
+                <th>Date Found</th>
                 <th>Reason Given</th>
               </tr>
             </thead>
@@ -38,7 +38,7 @@
               <tr>
                 <td>{{$claim->category}}</td>
                 <td>{{$claim->color}}</td>
-                <td>{{$claim->date_lost}}</td>
+                <td>{{$claim->date_found}}</td>
                 <td>{{$claim->reason}}</td>
                 <td>
                   <form action="{{action('ItemsController@edit',$claim->id)}}"method="post">

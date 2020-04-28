@@ -58,7 +58,7 @@ class ItemsController extends Controller
     $this->validate(request(),[
       'category' => 'required',
       'color' => 'required',
-      'date_lost' => 'required',
+      'date_found' => 'required',
       'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2000'
     ],[
       'images.*.required' => 'An image is required to be uploaded to the server',
@@ -70,7 +70,7 @@ class ItemsController extends Controller
     $item = new Item;
     $item->category = $request->input('category');
     $item->color = $request->input('color');
-    $item->date_lost = $request->input('date_lost');
+    $item->date_found = $request->input('date_found');
     $item->details = $request->input('details');
     $item->place = $request->input('place');
     $item->save();
@@ -141,11 +141,11 @@ class ItemsController extends Controller
     $this->validate(request(),[
       'category' => 'required',
       'color' => 'required',
-      'date_lost' => 'required',
+      'date_found' => 'required',
     ]);
     $item->category = $request->input('category');
     $item->color = $request->input('color');
-    $item->date_lost = $request->input('date_lost');
+    $item->date_found = $request->input('date_found');
     $item->details = $request->input('details');
     $item->place = $request->input('place');
     $item->save();

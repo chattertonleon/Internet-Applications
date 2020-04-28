@@ -27,7 +27,7 @@
             <thead>
               <tr>
                 <th>Category</th>
-                <th>Date Lost</th>
+                <th>Date Found</th>
                 <th>Reason For Claim</th>
                 <th>Claim Status</th>
               </tr>
@@ -38,14 +38,14 @@
               @foreach($claims as $claim)
               <tr>
                 <td>{{$claim['category']}}</td>
-                <td>{{$claim['date_lost']}}</td>
+                <td>{{$claim['date_found']}}</td>
                 <td>{{$claim['claim_reason']}}</td>
                 <td>{{$claim['claim_status']}}</td>
               </tr>
               @else
               <tr>
                 <td>{{$claim['category']}}</td>
-                <td>{{$claim['date_lost']}}</td>
+                <td>{{$claim['date_found']}}</td>
                 <td>{{$claim['claim_reason']}}</td>
                 <td>{{$claim['claim_status']}}</td>
               </tr>

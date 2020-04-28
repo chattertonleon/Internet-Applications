@@ -38,8 +38,8 @@
             placeholder="Color of item" />
           </div>
           <div class="col-md-8">
-            <label>Date lost</label></br>
-            <input type="date" name="date_lost"
+            <label>Date found</label></br>
+            <input type="date" name="date_found"
             placeholder="Date item lost">
           </div>
           <div class="col-md-8">

@@ -19,7 +19,7 @@ class ClaimsController extends Controller
         $claims = DB::table('claims')
                             ->join('items','claims.item_id','=','items.id')
                             ->select('claims.user_id','claims.item_id','claims.id','items.category',
-                            'items.color','items.date_lost','claims.reason')
+                            'items.color','items.date_found','claims.reason')
                             ->get();
         return view('admin.index',compact('claims'));
     }
