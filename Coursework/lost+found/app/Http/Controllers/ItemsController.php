@@ -58,8 +58,8 @@ class ItemsController extends Controller
     $this->validate(request(),[
       'category' => 'required',
       'color' => 'required',
-      'date_found' => 'required',
-      'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2000'
+      'date_found' => 'required|before:tomorrow',
+      'images.*' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2000'
     ],[
       'images.*.required' => 'An image is required to be uploaded to the server',
       'images.*.image' => 'All files uploaded must be an image',
@@ -82,11 +82,6 @@ class ItemsController extends Controller
         $extension = $file->getClientOriginalExtension();
         $fileNameToStore = $fileName.'_'.time().'.'.$extension;
         $path = $file->storeAs('public/images',$fileNameToStore);
-
-        $this->validate(request(),[
-          'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2000'
-        ]);
-
         $newImage = new Image;
         $newImage->image = $fileNameToStore;
         $newImage->image_item_id = $item->id;
@@ -141,7 +136,7 @@ class ItemsController extends Controller
     $this->validate(request(),[
       'category' => 'required',
       'color' => 'required',
-      'date_found' => 'required',
+      'date_found' => 'required|before:tomorrow'
     ]);
     $item->category = $request->input('category');
     $item->color = $request->input('color');

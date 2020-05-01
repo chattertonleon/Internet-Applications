@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+@unless(auth()->user()->isAdmin)
+<h1>You are not authorised to access this area</h1>
+@else
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-10 ">
@@ -72,4 +75,5 @@
   </div>
 </div>
 </div>
+@endif
 @endsection

@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
+@guest
+<h1>You are not authorised to access this area</h1>
+@else
 <link rel="stylesheet" href="{{ asset('css/landingPage.css') }}">
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8 ">
-      <div class="card" id="navigation">
-        <h1>Lost and Found</h1>
-      </div>
       <div class="card">
         <div class="card-header">Lost items</div>
         @if ($errors->any())
@@ -74,4 +74,5 @@
   </div>
 </div>
 </div>
+@endguest
 @endsection

@@ -26,7 +26,7 @@ Route::resource('items','ItemsController');
 
 Route::resource('users','UserController');
 
-Route::resource('images','ImagesController');
+Route::resource('img','ImagesController');
 
 Route::resource('admin','AdminController');
 
